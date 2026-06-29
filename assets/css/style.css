@@ -307,3 +307,10 @@ body {
     box-shadow: 0 0 0 0.25rem rgba(255, 107, 0, 0.25);
     border-color: var(--primary-color) !important;
 }
+
+/* Espacio compensatorio para la barra inferior flotante del perfil */
+@media (max-width: 991px) {
+    .padding-bottom-cta {
+        padding-bottom: 120px !important; 
+    }
+}
