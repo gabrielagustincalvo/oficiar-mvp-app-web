@@ -207,3 +207,27 @@ body {
         font-size: 0.95rem;
     }
 }
+
+/* --- ESTILOS EXCLUSIVOS FORMULARIO PRESUPUESTO --- */
+
+/* Zona de carga de archivos (Drag & Drop UI) */
+.upload-zone {
+    border: 2px dashed #CBD5E1;
+    background-color: #F8FAFC;
+    transition: all 0.2s ease-in-out;
+}
+
+.upload-zone:hover {
+    border-color: var(--primary-color);
+    background-color: #FFF3EB;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Modificamos los inputs para que al hacer foco no tengan el borde azul por defecto de Bootstrap, sino el naranja de la marca */
+.form-control:focus, .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 107, 0, 0.25);
+    border-color: var(--primary-color) !important;
+}
