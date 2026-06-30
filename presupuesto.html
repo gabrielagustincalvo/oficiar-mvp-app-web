@@ -40,12 +40,18 @@
             </div>
 
             <div class="mb-4">
-                <label class="form-label fw-semibold text-dark">Adjuntar fotos (Opcional)</label>
+                <label class="form-label fw-semibold text-dark">Adjuntar foto o video (Opcional)</label>
                 <div class="upload-zone rounded-4 d-flex flex-column align-items-center justify-content-center p-4 text-center cursor-pointer" onclick="document.getElementById('file-upload').click()">
-                    <i class="bi bi-camera text-orange fs-1 mb-2"></i>
-                    <span class="fw-medium text-dark">Tocá acá para subir una foto</span>
-                    <span class="small text-muted mt-1">Ayuda al profesional a dar un presupuesto exacto</span>
-                    <input type="file" id="file-upload" class="d-none" accept="image/*">
+                    
+                    <div class="d-flex gap-3 mb-2 text-orange">
+                        <i class="bi bi-camera fs-1"></i>
+                        <i class="bi bi-camera-video fs-1"></i>
+                    </div>
+                    
+                    <span class="fw-medium text-dark">Tocá acá para subir un archivo</span>
+                    <span class="small text-muted mt-1">Una foto o un video ayudan a dar un presupuesto exacto</span>
+                    
+                    <input type="file" id="file-upload" class="d-none" accept="image/*, video/*">
                 </div>
             </div>
 
