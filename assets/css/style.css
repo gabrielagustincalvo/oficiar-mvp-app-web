@@ -126,14 +126,14 @@ body {
     justify-content: center;
 }
 
-.oficio-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    border-color: var(--primary-color);
-}
-
 .oficio-card:active {
     transform: scale(0.96);
+}
+
+/* Foco visible para navegación por teclado (accesibilidad) */
+.oficio-card:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 .oficio-icon {
@@ -143,14 +143,27 @@ body {
     transition: color 0.3s, transform 0.3s;
 }
 
-.oficio-card:hover .oficio-icon {
-    color: var(--primary-color);
-    transform: scale(1.1);
-}
-
 .oficio-title {
     font-size: 1.1rem;
     font-weight: 700;
+}
+
+/* El "levantamiento" al pasar el mouse solo aplica en dispositivos con hover
+   real (mouse/trackpad), para que en celular la tarjeta no quede con el
+   efecto "pegado" después de tocarla. El !important en box-shadow hace
+   falta porque la card también lleva shadow-sm de Bootstrap, que ya trae
+   su propio box-shadow marcado como !important. */
+@media (hover: hover) and (pointer: fine) {
+    .oficio-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+        border-color: var(--primary-color);
+    }
+
+    .oficio-card:hover .oficio-icon {
+        color: var(--primary-color);
+        transform: scale(1.1);
+    }
 }
 
 /* Utilidades */
@@ -182,7 +195,13 @@ body {
 
 .nav-item i { font-size: 1.4rem; margin-bottom: 2px; }
 .nav-item span { font-size: 0.75rem; font-weight: 600; }
-.nav-item.active, .nav-item:hover { color: var(--primary-color); }
+.nav-item.active { color: var(--primary-color); }
+
+/* Mismo criterio: el color al pasar el mouse solo aplica con hover real,
+   para que el ícono no quede "pintado" de naranja después de tocarlo */
+@media (hover: hover) and (pointer: fine) {
+    .nav-item:hover { color: var(--primary-color); }
+}
 
 /* Media Queries para adaptar a Desktop */
 @media (min-width: 768px) {
@@ -205,6 +224,30 @@ body {
     }
     .oficio-title {
         font-size: 0.95rem;
+    }
+}
+
+/* --- ESTILOS EXCLUSIVOS PANTALLA LISTA (RESULTADOS) --- */
+
+/* Tarjetas de profesionales en la lista de resultados */
+.oficio-card-lista {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.oficio-card-lista:active {
+    transform: scale(0.98);
+}
+
+/* Foco visible para navegación por teclado (accesibilidad) */
+.oficio-card-lista:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .oficio-card-lista:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
     }
 }
 
@@ -240,15 +283,28 @@ body {
     }
 }
 
+/* Texto de "Sobre el profesional" (antes era un estilo inline) */
+.profile-bio-text {
+    line-height: 1.6;
+}
+
 /* Imágenes del Portafolio */
 .portfolio-img {
     background-size: cover;
     background-position: center;
     transition: transform 0.2s;
     cursor: pointer;
+    height: 140px;
 }
 .portfolio-img:hover {
     transform: scale(1.02);
+}
+
+/* Card lateral con el botón de "Solicitar Presupuesto" en desktop.
+   El !important en top hace falta porque Bootstrap también marca el "top"
+   de su utilidad .sticky-lg-top como !important */
+.profile-sidebar-sticky {
+    top: 100px !important;
 }
 
 /* Call To Action (Botón Naranja Principal) */
@@ -306,6 +362,11 @@ body {
 .form-control:focus, .form-select:focus {
     box-shadow: 0 0 0 0.25rem rgba(255, 107, 0, 0.25);
     border-color: var(--primary-color) !important;
+}
+
+/* Ícono del modal de "Solicitud enviada" (antes era un estilo inline) */
+.modal-success-icon {
+    font-size: 4rem;
 }
 
 /* Espacio compensatorio para la barra inferior flotante del perfil */
