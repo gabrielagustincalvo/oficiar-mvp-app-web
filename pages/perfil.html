@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil - Juan Pérez | Oficiar</title>
+    <title>Perfil del Profesional | Oficiar</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -30,27 +30,23 @@
                     
                     <div class="card-body position-relative px-4 pb-4 pt-0">
                         <div class="profile-avatar-wrapper text-center text-lg-start">
-                            <img src="https://ui-avatars.com/api/?name=Juan+Perez&background=1A1A1A&color=fff&size=150" alt="Juan Pérez" class="profile-avatar shadow-sm border border-4 border-white">
+                            <img id="perfil-avatar" src="https://ui-avatars.com/api/?name=%3F&background=CBD5E1&color=6C757D&size=150" alt="Foto de perfil" class="profile-avatar shadow-sm border border-4 border-white">
                         </div>
                         
                         <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end mt-3 mt-lg-0 perfil-info-margin">
                             <div class="text-center text-lg-start mt-2">
                                 <h1 class="fw-bold fs-3 mb-1 text-dark d-flex align-items-center justify-content-center justify-content-lg-start">
-                                    Juan Pérez 
+                                    <span id="perfil-nombre">Cargando perfil...</span>
                                     <i class="bi bi-patch-check-fill text-success ms-2 fs-4" title="Identidad Validada por IA"></i>
                                 </h1>
-                                <p class="text-muted fs-5 mb-2"><i class="bi bi-wrench-adjustable me-2 text-orange"></i>Plomero Matriculado</p>
+                                <p class="text-muted fs-5 mb-2">
+                                    <i class="bi bi-briefcase-fill me-2 text-orange" id="perfil-oficio-icono"></i><span id="perfil-oficio-nombre">-</span>
+                                </p>
                                 
                                 <div class="d-flex align-items-center justify-content-center justify-content-lg-start mb-2">
-                                    <div class="text-warning me-2 fs-5">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-half"></i>
-                                    </div>
-                                    <span class="fw-bold me-1 fs-5">4.8</span>
-                                    <span class="text-muted small">(124 trabajos)</span>
+                                    <div class="text-warning me-2 fs-5" id="perfil-estrellas"></div>
+                                    <span class="fw-bold me-1 fs-5" id="perfil-calificacion">-</span>
+                                    <span class="text-muted small" id="perfil-trabajos">(- trabajos)</span>
                                 </div>
                             </div>
                         </div>
@@ -60,8 +56,8 @@
                 <div class="card border-0 shadow-sm rounded-4 mb-4">
                     <div class="card-body p-4">
                         <h4 class="fw-bold mb-3 fs-5 text-dark">Sobre el profesional</h4>
-                        <p class="text-muted mb-0 text-break profile-bio-text">
-                            Especialista en instalaciones sanitarias, reparación de cañerías y detección de fugas con tecnología ultrasonido. Más de 15 años de experiencia trabajando en domicilios particulares. Comprometido con la limpieza post-trabajo.
+                        <p class="text-muted mb-0 text-break profile-bio-text" id="perfil-descripcion">
+                            Cargando descripción...
                         </p>
                     </div>
                 </div>
@@ -112,7 +108,7 @@
                             <li class="mb-3 d-flex align-items-center"><i class="bi bi-wallet2 text-orange fs-5 me-3"></i> <span class="fw-medium text-secondary">Acepta Mercado Pago</span></li>
                         </ul>
                         
-                        <button onclick="window.location.href='presupuesto.html'" class="btn btn-lg w-100 fw-bold d-none d-lg-block cta-btn text-white py-3 shadow-sm">Solicitar Presupuesto</button>
+                        <button class="btn btn-lg w-100 fw-bold d-none d-lg-block cta-btn text-white py-3 shadow-sm btn-solicitar-presupuesto">Solicitar Presupuesto</button>
                     </div>
                 </div>
             </div>
@@ -121,8 +117,10 @@
     </main>
 
     <div class="mobile-cta-bar d-lg-none shadow-lg">
-        <button onclick="window.location.href='presupuesto.html'" class="btn w-100 fw-bold cta-btn text-white py-3 fs-5 shadow-sm">Solicitar Presupuesto</button>
+        <button class="btn w-100 fw-bold cta-btn text-white py-3 fs-5 shadow-sm btn-solicitar-presupuesto">Solicitar Presupuesto</button>
     </div>
 
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/perfil.js"></script>
 </body>
 </html>
